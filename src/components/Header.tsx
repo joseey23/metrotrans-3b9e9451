@@ -15,9 +15,9 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
+    { href: "#about", label: "About" },
     { href: "#services", label: "Services" },
     { href: "#how-it-works", label: "How It Works" },
-    { href: "#about", label: "About" },
     { href: "#contact", label: "Contact" },
   ];
 
@@ -61,7 +61,7 @@ const Header = () => {
           </Link>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -71,12 +71,6 @@ const Header = () => {
                 {link.label}
               </a>
             ))}
-            <Link 
-              to="/admin" 
-              className="text-hero-text/60 hover:text-hero-text/80 transition-colors text-sm"
-            >
-              Admin
-            </Link>
           </div>
 
           <div className="flex items-center gap-3">
@@ -86,7 +80,7 @@ const Header = () => {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="md:hidden text-hero-text hover:bg-hero-text/10"
+                  className="lg:hidden text-hero-text hover:bg-hero-text/10"
                 >
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Open menu</span>
@@ -113,13 +107,6 @@ const Header = () => {
                       {link.label}
                     </a>
                   ))}
-                  <Link 
-                    to="/admin"
-                    onClick={handleNavClick}
-                    className="text-hero-text/60 hover:text-hero-text/80 transition-colors text-sm py-2"
-                  >
-                    Admin
-                  </Link>
                   <a 
                     href="#book"
                     onClick={handleNavClick}
