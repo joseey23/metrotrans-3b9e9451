@@ -9,15 +9,12 @@ import {
   Users, 
   LogOut, 
   Menu,
-  X,
-  Clock,
-  CheckCircle,
-  XCircle,
-  Car
+  X
 } from "lucide-react";
 import { toast } from "sonner";
 import AdminBookings from "@/components/admin/AdminBookings";
 import AdminDashboard from "@/components/admin/AdminDashboard";
+import metrotransLogo from "@/assets/metrotrans-logo.png";
 
 const Admin = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -93,15 +90,13 @@ const Admin = () => {
           {/* Logo */}
           <div className="p-6 border-b border-sidebar-border flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">M</span>
-              </div>
-              <div>
-                <span className="font-bold">MetroTrans</span>
-                <span className="block text-xs text-hero-text/60">Admin Portal</span>
-              </div>
+              <img 
+                src={metrotransLogo} 
+                alt="MetroTrans" 
+                className="h-10 w-auto brightness-0 invert"
+              />
             </div>
-            <button 
+            <button
               className="lg:hidden text-hero-text/60 hover:text-hero-text"
               onClick={() => setSidebarOpen(false)}
             >
