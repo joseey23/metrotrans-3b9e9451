@@ -103,9 +103,9 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-hero-text/60">
             <p>© 2026 MetroTrans Medical Transportation. All rights reserved.</p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-hero-text transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-hero-text transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-hero-text transition-colors">HIPAA Compliance</a>
+              <Link to="/privacy-policy" className="hover:text-hero-text transition-colors">Privacy Policy</Link>
+              <Link to="/terms-of-service" className="hover:text-hero-text transition-colors">Terms of Service</Link>
+              <Link to="/hipaa-compliance" className="hover:text-hero-text transition-colors">HIPAA Compliance</Link>
             </div>
           </div>
         </div>
