@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { Mail, Lock, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import metrotransLogo from "@/assets/metrotrans-logo.png";
 
 const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -58,9 +59,11 @@ const Auth = () => {
       <div className="w-full max-w-md">
         <div className="bg-card rounded-xl shadow-2xl p-8">
           <div className="text-center mb-8">
-            <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center mx-auto mb-4">
-              <span className="text-primary-foreground font-bold text-2xl">M</span>
-            </div>
+            <img 
+              src={metrotransLogo} 
+              alt="MetroTrans - Non Emergency Medical Transportation" 
+              className="h-16 w-auto mx-auto mb-4"
+            />
             <h1 className="text-2xl font-bold text-card-foreground">
               {isLogin ? "Admin Login" : "Create Account"}
             </h1>

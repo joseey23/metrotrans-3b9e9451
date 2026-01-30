@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { Calendar, Clock, MapPin, FileText, User, Mail, Phone } from "lucide-react";
+import { Calendar, Clock, FileText, User, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { z } from "zod";
+import LocationSelect from "@/components/booking/LocationSelect";
+import { pickupLandmarks, healthFacilities } from "@/components/booking/locationData";
 
 // Validation schema
 const bookingSchema = z.object({
@@ -99,39 +101,25 @@ const BookingForm = () => {
       </h3>
       
       <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1.5 block">
-            Pick-up Location *
-          </label>
-          <div className="relative">
-            <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input
-              placeholder="City, Home, Street, etc"
-              value={formData.pickupLocation}
-              onChange={(e) => setFormData({ ...formData, pickupLocation: e.target.value })}
-              className="pl-10"
-              required
-            />
-          </div>
-          {errors.pickupLocation && <p className="text-destructive text-xs mt-1">{errors.pickupLocation}</p>}
-        </div>
+        <LocationSelect
+          label="Pick-up Location"
+          placeholder="Select a landmark or enter address"
+          value={formData.pickupLocation}
+          onChange={(value) => setFormData({ ...formData, pickupLocation: value })}
+          options={pickupLandmarks}
+          error={errors.pickupLocation}
+          required
+        />
         
-        <div>
-          <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1.5 block">
-            Drop-off Location *
-          </label>
-          <div className="relative">
-            <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input
-              placeholder="City, Airport, Station, etc"
-              value={formData.dropoffLocation}
-              onChange={(e) => setFormData({ ...formData, dropoffLocation: e.target.value })}
-              className="pl-10"
-              required
-            />
-          </div>
-          {errors.dropoffLocation && <p className="text-destructive text-xs mt-1">{errors.dropoffLocation}</p>}
-        </div>
+        <LocationSelect
+          label="Drop-off Location"
+          placeholder="Select a health facility or enter address"
+          value={formData.dropoffLocation}
+          onChange={(value) => setFormData({ ...formData, dropoffLocation: value })}
+          options={healthFacilities}
+          error={errors.dropoffLocation}
+          required
+        />
         
         <div className="grid grid-cols-2 gap-4">
           <div>
@@ -191,7 +179,7 @@ const BookingForm = () => {
               <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 type="tel"
-                placeholder="(302) 555-1234"
+                placeholder="(215) 555-1234"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 className="pl-10"

@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
+import metrotransLogo from "@/assets/metrotrans-logo.png";
 
 const Footer = () => {
   return (
@@ -8,14 +9,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">M</span>
-              </div>
-              <span className="text-xl font-bold">MetroTrans</span>
+            <div className="mb-4">
+              <img 
+                src={metrotransLogo} 
+                alt="MetroTrans - Non Emergency Medical Transportation" 
+                className="h-12 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-hero-text/70 mb-6">
-              Providing safe, reliable, and compassionate non-emergency medical transportation throughout Delaware.
+              Providing safe, reliable, and compassionate non-emergency medical transportation in the Newtown Square, PA area.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-sidebar-accent flex items-center justify-center hover:bg-primary transition-colors">
@@ -71,17 +73,17 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <Phone className="h-5 w-5 text-primary mt-0.5" />
                 <div>
-                  <p className="font-medium">(302) 555-1234</p>
+                  <p className="font-medium">(215) 980-3355</p>
                   <p className="text-sm text-hero-text/60">24/7 Dispatch Available</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="h-5 w-5 text-primary mt-0.5" />
-                <p>info@metrotrans.com</p>
+                <p>info@metrotrans.org</p>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary mt-0.5" />
-                <p>Serving All of Delaware</p>
+                <p>Newtown Square, PA 19073</p>
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="h-5 w-5 text-primary mt-0.5" />
@@ -99,7 +101,7 @@ const Footer = () => {
       <div className="border-t border-sidebar-border">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-hero-text/60">
-            <p>© 2024 MetroTrans Medical Transportation. All rights reserved.</p>
+            <p>© 2026 MetroTrans Medical Transportation. All rights reserved.</p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-hero-text transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-hero-text transition-colors">Terms of Service</a>
