@@ -28,7 +28,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-hero/95 backdrop-blur-sm">
       {/* Top info bar */}
-      <div className="border-b border-sidebar-border">
+      <div className="hidden md:block border-b border-sidebar-border">
         <div className="container mx-auto px-4 py-2">
           <div className="flex flex-wrap items-center justify-between gap-2 text-sm text-hero-text/80">
             <div className="flex items-center gap-6">
@@ -36,7 +36,7 @@ const Header = () => {
                 <Phone className="h-4 w-4" />
                 <span>(215) 980-3355</span>
               </a>
-              <a href="mailto:info@metrotrans.org" className="hidden sm:flex items-center gap-2 hover:text-primary transition-colors">
+              <a href="mailto:info@metrotrans.org" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Mail className="h-4 w-4" />
                 <span>info@metrotrans.org</span>
               </a>

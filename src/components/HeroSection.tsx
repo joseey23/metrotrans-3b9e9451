@@ -19,7 +19,7 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-hero-text">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in-up">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 pt-4 animate-fade-in-up">
               Safe.<br />
               Reliable.<br />
               <span className="text-primary">Non-Emergency</span><br />
