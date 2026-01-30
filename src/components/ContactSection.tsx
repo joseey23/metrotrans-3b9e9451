@@ -99,7 +99,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-card-foreground">Phone</h4>
-                    <p className="text-muted-foreground">(302) 555-1234</p>
+                    <p className="text-muted-foreground">(215) 980-3355</p>
                     <p className="text-sm text-muted-foreground">24/7 Dispatch Available</p>
                   </div>
                 </div>
@@ -110,7 +110,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-card-foreground">Email</h4>
-                    <p className="text-muted-foreground">info@metrotrans.com</p>
+                    <p className="text-muted-foreground">info@metrotrans.org</p>
                     <p className="text-sm text-muted-foreground">Response within 24 hours</p>
                   </div>
                 </div>
@@ -121,7 +121,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-card-foreground">Service Area</h4>
-                    <p className="text-muted-foreground">All of Delaware</p>
+                    <p className="text-muted-foreground">Newtown Square, PA 19073</p>
                     <p className="text-sm text-muted-foreground">Including surrounding areas</p>
                   </div>
                 </div>
@@ -181,7 +181,7 @@ const ContactSection = () => {
                 </label>
                 <Input
                   type="tel"
-                  placeholder="(302) 555-1234"
+                  placeholder="(215) 555-1234"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 />
