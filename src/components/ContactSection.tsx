@@ -4,6 +4,15 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100),
+  email: z.string().trim().email("Invalid email").max(255),
+  phone: z.string().trim().max(20).optional(),
+  message: z.string().trim().min(1, "Message is required").max(1000),
+});
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -13,19 +22,51 @@ const ContactSection = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrors({});
+    
+    const result = contactSchema.safeParse(formData);
+    if (!result.success) {
+      const fieldErrors: Record<string, string> = {};
+      result.error.errors.forEach(err => {
+        if (err.path[0]) {
+          fieldErrors[err.path[0] as string] = err.message;
+        }
+      });
+      setErrors(fieldErrors);
+      return;
+    }
+
     setIsSubmitting(true);
     
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast.success("Message sent!", {
-      description: "We'll get back to you within 24 hours.",
-    });
-    
-    setFormData({ name: "", email: "", phone: "", message: "" });
-    setIsSubmitting(false);
+    try {
+      const { error } = await supabase
+        .from("contact_messages")
+        .insert({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim() || null,
+          message: formData.message.trim(),
+        });
+
+      if (error) throw error;
+
+      toast.success("Message sent!", {
+        description: "We'll get back to you within 24 hours.",
+      });
+      
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (error) {
+      console.error("Contact error:", error);
+      toast.error("Failed to send message", {
+        description: "Please try again or call us directly.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -109,7 +150,7 @@ const ContactSection = () => {
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1.5 block">
-                    Full Name
+                    Full Name *
                   </label>
                   <Input
                     placeholder="John Doe"
@@ -117,10 +158,11 @@ const ContactSection = () => {
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
                   />
+                  {errors.name && <p className="text-destructive text-xs mt-1">{errors.name}</p>}
                 </div>
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1.5 block">
-                    Email
+                    Email *
                   </label>
                   <Input
                     type="email"
@@ -129,6 +171,7 @@ const ContactSection = () => {
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
                   />
+                  {errors.email && <p className="text-destructive text-xs mt-1">{errors.email}</p>}
                 </div>
               </div>
               
@@ -146,7 +189,7 @@ const ContactSection = () => {
               
               <div>
                 <label className="text-sm font-medium text-foreground mb-1.5 block">
-                  Message
+                  Message *
                 </label>
                 <Textarea
                   placeholder="How can we help you?"
@@ -155,6 +198,7 @@ const ContactSection = () => {
                   className="min-h-[120px] resize-none"
                   required
                 />
+                {errors.message && <p className="text-destructive text-xs mt-1">{errors.message}</p>}
               </div>
               
               <Button 
