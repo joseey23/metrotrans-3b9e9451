@@ -21,7 +21,7 @@ const bookingSchema = z.object({
   notes: z.string().trim().max(1000).optional(),
 });
 
-const BookingForm = () => {
+const BookingForm = ({ hideTitle = false }: { hideTitle?: boolean }) => {
   const [formData, setFormData] = useState({
     pickupLocation: "",
     dropoffLocation: "",
@@ -95,10 +95,12 @@ const BookingForm = () => {
   };
 
   return (
-    <div className="bg-card rounded-xl shadow-2xl p-6 md:p-8 w-full max-w-md animate-slide-in-right">
-      <h3 className="text-xl font-bold text-card-foreground mb-6">
-        Book your next trip
-      </h3>
+    <div className={hideTitle ? "w-full" : "bg-card rounded-xl shadow-2xl p-6 md:p-8 w-full max-w-md animate-slide-in-right"}>
+      {!hideTitle && (
+        <h3 className="text-xl font-bold text-card-foreground mb-6">
+          Book your next trip
+        </h3>
+      )}
       
       <form onSubmit={handleSubmit} className="space-y-4">
         <LocationSelect
