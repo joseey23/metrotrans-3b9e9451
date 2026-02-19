@@ -1,6 +1,6 @@
 import { Shield, Clock, Heart, Award, Users, Accessibility } from "lucide-react";
 import driverImage from "@/assets/driver-helping-patient.jpg";
-import { Button } from "@/components/ui/button";
+import BookingDialog from "@/components/BookingDialog";
 
 const features = [
   {
@@ -84,12 +84,7 @@ const WhyChooseUsSection = () => {
               ))}
             </div>
             
-            <Button 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg"
-              onClick={() => document.getElementById('book')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Book A Ride
-            </Button>
+            <BookingDialog />
           </div>
         </div>
       </div>

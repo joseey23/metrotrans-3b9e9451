@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import ServicesSection from "@/components/ServicesSection";
+import BookingCTA from "@/components/BookingCTA";
 
 const Services = () => {
   return (
@@ -16,6 +17,7 @@ const Services = () => {
         </div>
       </div>
       <ServicesSection />
+      <BookingCTA />
       <Footer />
       <ScrollToTop />
     </div>
