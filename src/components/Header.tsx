@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Phone, Mail, MapPin, Menu } from "lucide-react";
 import { Link } from "react-router-dom";
+import BookingDialog from "@/components/BookingDialog";
 import metrotransLogo from "@/assets/metrotrans-logo.png";
 import {
   Sheet,
@@ -107,24 +108,28 @@ const Header = () => {
                       {link.label}
                     </Link>
                   ))}
-                  <a 
-                    href="#book"
-                    onClick={handleNavClick}
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold transition-all text-center mt-4"
-                  >
-                    Book a Ride
-                  </a>
+                  <BookingDialog
+                    trigger={
+                      <button
+                        onClick={handleNavClick}
+                        className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold transition-all text-center mt-4 w-full cursor-pointer"
+                      >
+                        Book a Ride
+                      </button>
+                    }
+                  />
                 </div>
               </SheetContent>
             </Sheet>
 
             {/* Book a Ride CTA */}
-            <a 
-              href="#book" 
-              className="hidden sm:block bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2.5 rounded-lg font-semibold transition-all hover:shadow-lg hover:shadow-primary/25"
-            >
-              Book a Ride
-            </a>
+            <BookingDialog
+              trigger={
+                <button className="hidden sm:block bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2.5 rounded-lg font-semibold transition-all hover:shadow-lg hover:shadow-primary/25 cursor-pointer">
+                  Book a Ride
+                </button>
+              }
+            />
           </div>
         </div>
       </nav>

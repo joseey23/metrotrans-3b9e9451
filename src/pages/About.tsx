@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
+import BookingCTA from "@/components/BookingCTA";
 
 const About = () => {
   return (
@@ -16,6 +17,7 @@ const About = () => {
         </div>
       </div>
       <WhyChooseUsSection />
+      <BookingCTA />
       <Footer />
       <ScrollToTop />
     </div>
