@@ -25,11 +25,11 @@ const BookingDialog = ({ trigger }: BookingDialogProps) => {
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto p-0">
-        <DialogHeader className="sr-only">
-          <DialogTitle>Book a Ride</DialogTitle>
+      <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto">
+        <DialogHeader>
+          <DialogTitle>Book your next trip</DialogTitle>
         </DialogHeader>
-        <BookingForm />
+        <BookingForm hideTitle />
       </DialogContent>
     </Dialog>
   );
