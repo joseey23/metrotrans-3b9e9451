@@ -15,10 +15,10 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { href: "#about", label: "About" },
-    { href: "#services", label: "Services" },
-    { href: "#how-it-works", label: "How It Works" },
-    { href: "#contact", label: "Contact" },
+    { href: "/about", label: "About" },
+    { href: "/services", label: "Services" },
+    { href: "/how-it-works", label: "How It Works" },
+    { href: "/contact", label: "Contact" },
   ];
 
   const handleNavClick = () => {
@@ -52,7 +52,7 @@ const Header = () => {
       {/* Main navigation */}
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <img 
               src={metrotransLogo} 
               alt="MetroTrans - Non Emergency Medical Transportation" 
@@ -63,13 +63,13 @@ const Header = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
+                to={link.href}
                 className="text-hero-text/80 hover:text-primary transition-colors font-medium"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -97,15 +97,15 @@ const Header = () => {
                   </SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col gap-4 mt-8">
-                  {navLinks.map((link) => (
-                    <a
+                {navLinks.map((link) => (
+                    <Link
                       key={link.href}
-                      href={link.href}
+                      to={link.href}
                       onClick={handleNavClick}
                       className="text-hero-text/80 hover:text-primary transition-colors font-medium text-lg py-2"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   ))}
                   <a 
                     href="#book"
