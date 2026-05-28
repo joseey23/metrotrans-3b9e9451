@@ -121,7 +121,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-card-foreground">Service Area</h4>
-                    <p className="text-muted-foreground">Newtown Square, PA 19073</p>
+                    <p className="text-muted-foreground">1001 Macdade Blvd, Woodlyn, PA 19094</p>
                     <p className="text-sm text-muted-foreground">Including surrounding areas</p>
                   </div>
                 </div>
