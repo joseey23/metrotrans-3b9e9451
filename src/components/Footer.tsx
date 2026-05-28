@@ -17,7 +17,7 @@ const Footer = () => {
               />
             </div>
             <p className="text-hero-text/70 mb-6">
-              Providing safe, reliable, and compassionate non-emergency medical transportation in the Newtown Square, PA area.
+              Providing safe, reliable, and compassionate non-emergency medical transportation in the Woodlyn, PA area.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-sidebar-accent flex items-center justify-center hover:bg-primary transition-colors">
