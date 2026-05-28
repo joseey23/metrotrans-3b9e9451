@@ -83,7 +83,10 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary mt-0.5" />
-                <p>Newtown Square, PA 19073</p>
+                <div>
+                  <p>1001 Macdade Blvd</p>
+                  <p>Woodlyn, PA 19094</p>
+                </div>
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="h-5 w-5 text-primary mt-0.5" />
