@@ -44,7 +44,7 @@ const Header = () => {
             </div>
             <div className="flex items-center gap-2 text-hero-text/60">
               <MapPin className="h-4 w-4" />
-              <span>Newtown Square, PA 19073</span>
+              <span>1001 Macdade Blvd, Woodlyn, PA 19094</span>
             </div>
           </div>
         </div>
