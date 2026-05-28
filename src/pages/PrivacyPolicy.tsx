@@ -112,7 +112,7 @@ const PrivacyPolicy = () => {
             </p>
             <div className="mt-4 p-4 bg-muted rounded-lg">
               <p className="text-foreground font-medium">MetroTrans Medical Transportation</p>
-              <p className="text-muted-foreground">Newtown Square, PA 19073</p>
+              <p className="text-muted-foreground">1001 Macdade Blvd, Woodlyn, PA 19094</p>
               <p className="text-muted-foreground">Phone: (215) 980-3355</p>
               <p className="text-muted-foreground">Email: info@metrotrans.org</p>
             </div>
