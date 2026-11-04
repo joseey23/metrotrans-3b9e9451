@@ -159,7 +159,7 @@ const HIPAACompliance = () => {
               <p className="text-foreground font-medium">MetroTrans Medical Transportation</p>
               <p className="text-foreground font-medium">HIPAA Privacy Officer</p>
               <p className="text-muted-foreground">1001 Macdade Blvd, Woodlyn, PA 19094</p>
-              <p className="text-muted-foreground">Phone: (215) 980-3355</p>
+              <p className="text-muted-foreground">Phone: +1 (267) 270-0527 or +1 (484) 477-8474</p>
               <p className="text-muted-foreground">Email: info@metrotrans.org</p>
             </div>
           </section>

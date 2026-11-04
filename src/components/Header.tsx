@@ -33,9 +33,13 @@ const Header = () => {
         <div className="container mx-auto px-4 py-2">
           <div className="flex flex-wrap items-center justify-between gap-2 text-sm text-hero-text/80">
             <div className="flex items-center gap-6">
-              <a href="tel:+12159803355" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <a href="tel:+12672700527" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Phone className="h-4 w-4" />
-                <span>(215) 980-3355</span>
+                <span>+1 (267) 270-0527</span>
+              </a>
+              <a href="tel:+14844778474" className="flex items-center gap-2 hover:text-primary transition-colors">
+                <Phone className="h-4 w-4" />
+                <span>+1 (484) 477-8474</span>
               </a>
               <a href="mailto:info@metrotrans.org" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Mail className="h-4 w-4" />
