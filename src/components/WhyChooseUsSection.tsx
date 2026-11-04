@@ -49,10 +49,6 @@ const WhyChooseUsSection = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 rounded-xl shadow-xl hidden md:block">
-              <div className="text-4xl font-bold">15+</div>
-              <div className="text-sm opacity-90">Years of Service</div>
-            </div>
           </div>
           
           {/* Content */}

@@ -11,7 +11,7 @@ const BookingCTA = () => {
         <p className="text-primary-foreground/80 max-w-xl mx-auto mb-8 text-lg">
           Schedule your non-emergency medical transport now or call us for immediate assistance.
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4">
           <BookingDialog
             trigger={
               <button className="bg-background hover:bg-background/90 text-foreground px-8 py-4 rounded-lg font-semibold text-lg transition-all hover:shadow-lg cursor-pointer">
@@ -20,11 +20,18 @@ const BookingCTA = () => {
             }
           />
           <a
-            href="tel:+12159803355"
+            href="tel:+12672700527"
             className="flex items-center gap-2 border-2 border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary-foreground/10 transition-all"
           >
             <Phone className="h-5 w-5" />
-            (215) 980-3355
+            +1 (267) 270-0527
+          </a>
+          <a
+            href="tel:+14844778474"
+            className="flex items-center gap-2 border-2 border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary-foreground/10 transition-all"
+          >
+            <Phone className="h-5 w-5" />
+            +1 (484) 477-8474
           </a>
         </div>
       </div>
