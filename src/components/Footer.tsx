@@ -48,9 +48,6 @@ const Footer = () => {
               <li>
                 <a href="#book" className="text-hero-text/70 hover:text-primary transition-colors">Book a Ride</a>
               </li>
-              <li>
-                <Link to="/admin" className="text-hero-text/70 hover:text-primary transition-colors">Admin Portal</Link>
-              </li>
             </ul>
           </div>
           
